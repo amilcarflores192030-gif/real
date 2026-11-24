@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Propuesta de servicio · Pídelo Con Todo Snack Bar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fffaf0;--card:#fff;--ink:#14213d;--mut:#56627d;--blue:#2f8fe0;--navy:#0047ab;--gold:#f2b14e;--red:#f21f2e;--line:#e8dfcc;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1426;--card:#15213b;--ink:#f3f6ff;--mut:#a9b6d3;--blue:#6bb6f5;--navy:#8fb8ff;--line:#273656;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c1426;--card:#15213b;--ink:#f3f6ff;--mut:#a9b6d3;--blue:#6bb6f5;--navy:#8fb8ff;--line:#273656;color-scheme:dark}
+*,*:before,*:after{box-sizing:inherit}
+html{scroll-padding-top:70px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 Nunito,system-ui,sans-serif}
+h1,h2,h3{font-family:"Bagel Fat One",Nunito,system-ui,sans-serif;font-weight:400;line-height:1.1;margin:0}
+a{color:inherit}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;align-items:center;gap:8px;padding:10px 16px;background:var(--bg);border-bottom:2px solid var(--line);overflow-x:auto}
+.bar b{font-family:"Bagel Fat One",sans-serif;font-weight:400;color:var(--red);white-space:nowrap;margin-right:auto}
+.bar a{font-weight:800;font-size:14px;text-decoration:none;white-space:nowrap;padding:6px 10px;border-radius:99px}
+.bar a:hover{background:var(--line)}
+button{font:inherit;cursor:pointer}
+#tema{border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:6px 12px;font-weight:800;white-space:nowrap}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+main{max-width:860px;margin:0 auto;padding:0 18px}
+.hero{padding:44px 0 30px}
+.hero h1{font-size:clamp(46px,13vw,92px);color:var(--blue);text-shadow:4px 4px 0 var(--navy)}
+.hero p{max-width:34em;color:var(--mut);font-size:19px}
+.hero .by{font-weight:800;color:var(--navy)}
+.cta{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font-weight:800;padding:13px 22px;border-radius:14px;border:0;box-shadow:0 5px 0 #a3121c}
+.cta:active{transform:translateY(3px);box-shadow:0 2px 0 #a3121c}
+section{padding:34px 0;border-top:3px dashed var(--line)}
+h2{font-size:clamp(30px,7vw,44px);color:var(--blue)}
+h2 small{display:block;font:800 16px Nunito,sans-serif;color:var(--gold);margin-top:6px}
+.lead{color:var(--mut);max-width:40em}
+.note{background:var(--card);border-left:6px solid var(--red);padding:12px 16px;border-radius:0 12px 12px 0;margin:18px 0;font-weight:600}
+details{background:var(--card);border:2px solid var(--line);border-radius:16px;margin:12px 0;overflow:hidden}
+summary{list-style:none;cursor:pointer;padding:14px 18px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary strong{font-family:"Bagel Fat One",sans-serif;font-weight:400;font-size:22px;color:var(--ink);display:block}
+summary span{color:var(--gold);font-weight:800;font-size:15px}
+summary:after{content:"+";font:800 26px Nunito;color:var(--red);transition:transform .2s}
+details[open] summary:after{transform:rotate(45deg)}
+.in{padding:0 18px 18px;display:grid;gap:14px}
+.in h3{font:800 15px Nunito,sans-serif;color:var(--navy);margin-bottom:4px}
+.in ul{margin:0;padding-left:20px}
+.meta{display:flex;flex-wrap:wrap;gap:8px}
+.meta i{font-style:normal;font-weight:800;font-size:14px;background:var(--line);padding:4px 11px;border-radius:99px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.box{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:16px}
+.box h3{font-size:21px;color:var(--navy);margin-bottom:6px}
+.pill{display:flex;flex-wrap:wrap;gap:8px;padding:0;list-style:none;margin:14px 0}
+.pill li{background:var(--card);border:2px solid var(--line);padding:6px 14px;border-radius:99px;font-weight:800}
+ol.steps{padding:0;list-style:none;display:grid;gap:12px;counter-reset:s}
+ol.steps li{counter-increment:s;background:var(--card);border:2px solid var(--line);border-radius:16px;padding:14px 16px 14px 62px;position:relative}
+ol.steps li:before{content:counter(s);position:absolute;left:14px;top:12px;width:36px;height:36px;border-radius:50%;background:var(--gold);color:#14213d;font:400 20px "Bagel Fat One",sans-serif;display:grid;place-items:center}
+form{display:grid;gap:12px;background:var(--card);border:2px solid var(--line);border-radius:18px;padding:18px}
+label{font-weight:800;font-size:15px;display:grid;gap:4px}
+input,select,textarea{font:inherit;padding:11px 12px;border-radius:10px;border:2px solid var(--line);background:var(--bg);color:var(--ink)}
+.err{color:var(--red);font-weight:800;min-height:1.3em;margin:0}
+footer{margin-top:30px;padding:26px 18px 34px;text-align:center;background:var(--navy);color:#fff;font-size:15px}
+footer p{margin:4px auto;max-width:36em}
+:root[data-theme="dark"] footer,:root:not([data-theme="light"]) footer{--x:0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) footer{background:#101c36}}
+:root[data-theme="dark"] footer{background:#101c36}
+.tabla{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;max-width:440px;margin:18px 0;padding:18px;border-radius:20px;background:linear-gradient(#b4561f,#7d3410);border:4px solid #5a2509}
+.tabla div{grid-column:span 2;background:#fff7e8;color:#14213d;border-radius:12px;min-height:58px;display:grid;place-items:center;text-align:center;font-weight:800;font-size:14px;padding:6px}
+.tabla .u{grid-column:span 3;background:#ffe3ea;min-height:74px}
+.tabla .t:nth-child(3n+1){background:#ffe3ea}.tabla .t:nth-child(3n+2){background:#ffeccb}.tabla .t:nth-child(3n){background:#d5f1e3}
+.emp{display:flex;flex-wrap:wrap;gap:8px;padding:0;list-style:none}
+.emp li{background:var(--card);border:2px dashed var(--gold);border-radius:12px;padding:8px 14px;font-weight:800}
+.calc{display:grid;gap:12px;background:var(--card);border:2px solid var(--line);border-radius:18px;padding:18px}
+#res{margin:0;padding-left:20px;font-weight:600}
+#res b{color:var(--red)}
+.soon{position:relative;overflow:hidden;border-radius:22px;padding:34px 22px;text-align:center;color:#fff;background:repeating-linear-gradient(135deg,#0b1a3a 0 18px,#102a5e 18px 36px)}
+.soon:before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.16) 50%,transparent 70%);transform:translateX(-100%);animation:brillo 3.6s ease-in-out 1s 2}
+@keyframes brillo{to{transform:translateX(100%)}}
+.soon h2{color:var(--gold);position:relative}
+.soon p{position:relative;max-width:30em;margin:12px auto}
+.soon .lock{font-size:46px;position:relative}
+.wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:6;background:#25d366;color:#073b1c;font-weight:800;text-decoration:none;padding:12px 18px;border-radius:99px;box-shadow:0 5px 14px rgba(0,0,0,.3)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.soon:before{animation:none}}
+</style>
+</head>
+<body>
+<nav class="bar" aria-label="Secciones">
+<b>Pídelo Con Todo</b>
+<a href="#barras">Barras</a><a href="#snacks">Snacks y combos</a><a href="#barra">Tu barra</a><a href="#plan">Planifica</a><a href="#faq">Preguntas</a><a href="#cotiza">Cotiza</a>
+<button id="tema" type="button" aria-label="Cambiar entre modo día y noche">🌙 Noche</button>
+</nav>
+<main>
+<header class="hero">
+<h1>Propuesta de servicio</h1>
+<p>Snack bar para eventos: barras personalizadas, snacks y combos con el sabor de Pídelo Con Todo. Todo lo que se te antoja, en un solo lugar.</p>
+<p class="by">Preparada por Amilcar Roney · 2026</p>
+<a class="cta" href="#cotiza">Solicita tu cotización</a>
+</header>
+
+<section id="esencia">
+<h2>Nuestra esencia</h2>
+<p class="lead">Creemos que cada celebración merece algo especial. Cuidamos cada detalle, desde la selección de los productos hasta la presentación final, para que cada evento sea un momento único.</p>
+<p class="lead">No se trata solo de servir un producto: creamos experiencias que sorprenden, se disfrutan y se quedan en el recuerdo de cada invitado.</p>
+<div class="note">Todas las barras: mínimo de 20 personas · servicio de aproximadamente 2 horas · el costo varía según la cantidad de personas.</div>
+</section>
+
+<section id="barras">
+<h2>Nuestras barras<small>Toca una barra para ver qué incluye</small></h2>
+<div id="lista"></div>
+<div class="note">Personaliza cada vaso o plato con un sticker con el nombre, temática o diseño de tu evento. Tiene costo adicional.</div>
+</section>
+
+<section id="snacks">
+<h2>Otros snacks<small>Palomitas · Cupcake · Flan (vaso 9 oz) · Gelatina (vaso 9 oz)</small></h2>
+<h2 style="margin-top:28px">Snack Experience</h2>
+<p class="lead">Una combinación de snacks para disfrutar diferentes sabores en un solo evento. Cada invitado recibe 3 opciones.</p>
+<div class="grid">
+<div class="box"><h3>Combo Dulce</h3>Palomita + Cupcake + Gelatina</div>
+<div class="box"><h3>Combo Fresh</h3>Smoothie + Fruta de temporada + Fresas con crema</div>
+<div class="box"><h3>Combo Mix</h3>Minuta + Chili Gummy Mix + Palomita</div>
+<div class="box"><h3>Combo Personalizado</h3>Elige tus 3 favoritos entre todos los snacks.</div>
+</div>
+<ul class="pill"><li>Minutas</li><li>Chili Gummy Mix</li><li>Dulce Capricho</li><li>Waffles</li><li>Smoothies</li><li>Fresas con crema</li><li>Fruta de temporada</li><li>Mocktail</li><li>Palomitas</li><li>Cupcake</li><li>Flan</li><li>Gelatina</li></ul>
+<div class="note">El servicio incluye 5 toppings a elección, y jarabes y salsas según el snack. El costo depende de la cantidad de personas y de la combinación. Mínimo 20 personas.</div>
+</section>
+
+<section id="barra">
+<h2>Así se ve tu barra<small>Una barra de madera con todo a la mano</small></h2>
+<p class="lead">Cada barra tiene hasta 8 espacios para toppings y 2 para utensilios, ordenados para que tus invitados se sirvan fácil y rápido.</p>
+<div class="tabla" role="img" aria-label="Esquema de la barra: 8 espacios de toppings y 2 de utensilios"><div class="t">Topping 1</div><div class="t">Topping 2</div><div class="t">Topping 3</div><div class="t">Topping 4</div><div class="t">Topping 5</div><div class="t">Topping 6</div><div class="t">Topping 7</div><div class="t">Topping 8</div><div class="u">Vasos, copas o bowls</div><div class="u">Cucharas, servilletas, pajillas</div></div>
+<h3 style="font-size:24px;color:var(--navy)">Empaques con tu temática</h3>
+<ul class="emp"><li>Vaso transparente</li><li>Bolsa kraft</li><li>Contenedor transparente</li></ul>
+<p class="lead">Todos pueden llevar el logo o la temática de tu evento en un sticker.</p>
+</section>
+
+<section id="porque">
+<h2>Por qué elegirnos</h2>
+<div class="grid">
+<div class="box"><h3>Variedad</h3>8 barras y 12 snacks para combinar a tu gusto.</div>
+<div class="box"><h3>A tu medida</h3>Eliges jarabes, toppings y combos según tus invitados.</div>
+<div class="box"><h3>Tu temática</h3>Stickers con el nombre o diseño de tu evento.</div>
+<div class="box"><h3>Cada detalle</h3>Cuidamos desde los ingredientes hasta la presentación final.</div>
+</div>
+</section>
+
+<section id="plan">
+<h2>Planifica tu evento<small>Un cálculo aproximado, sin compromiso</small></h2>
+<div class="calc">
+<label>Barra<select id="cb"></select></label>
+<label>Invitados<input id="cg" type="number" min="1" inputmode="numeric" value="30"></label>
+<ul id="res"></ul>
+</div>
+</section>
+
+<section id="como">
+<h2>Cómo funciona</h2>
+<ol class="steps">
+<li><b>Cuéntanos tu evento.</b> Fecha, lugar, tipo de celebración y cuántos invitados esperas.</li>
+<li><b>Elige tu barra o combo.</b> Te ayudamos a escoger según tus invitados y tu temática.</li>
+<li><b>Recibe tu cotización.</b> El costo se calcula según la cantidad de personas y lo que elijas.</li>
+<li><b>Nosotros montamos y servimos.</b> Barra armada, empaques con tu temática y servicio por unas 2 horas.</li>
+</ol>
+<h2 style="margin-top:30px">Creamos contigo</h2>
+<p class="lead">¿Tienes una idea diferente? Cuéntanos qué snack, presentación o experiencia quieres ofrecer y la armamos desde cero, según tus gustos y tu temática.</p>
+</section>
+
+<section id="faq">
+<h2>Preguntas frecuentes</h2>
+<details><summary><strong>¿Cuántas personas se necesitan como mínimo?</strong></summary><div class="in"><p>El mínimo es de 20 personas.</p></div></details>
+<details><summary><strong>¿Cuánto dura el servicio?</strong></summary><div class="in"><p>Aproximadamente 2 horas.</p></div></details>
+<details><summary><strong>¿Cuánto cuesta?</strong></summary><div class="in"><p>Depende de la cantidad de personas y de la barra o combo que elijas. Solicita tu cotización y te respondemos.</p></div></details>
+<details><summary><strong>¿Puedo personalizar los vasos o platos?</strong></summary><div class="in"><p>Sí. Ponemos un sticker con el nombre, la temática o el diseño de tu evento. Tiene costo adicional.</p></div></details>
+<details><summary><strong>¿Puedo mezclar varios snacks?</strong></summary><div class="in"><p>Sí. Con Snack Experience cada invitado recibe 3 opciones de snacks.</p></div></details>
+<details><summary><strong>Tengo una idea diferente. ¿Pueden hacerla?</strong></summary><div class="in"><p>Claro. Cuéntanos qué tienes en mente y la creamos contigo desde cero.</p></div></details>
+</section>
+
+<section id="pronto">
+<div class="soon">
+<div class="lock" aria-hidden="true">🔒</div>
+<h2>Algo se viene</h2>
+<p>Estamos preparando algo grande para 2027. Todavía no podemos contarte nada.</p>
+<p><b>Síguenos en @pcontsnacks.hn y entérate primero.</b></p>
+</div>
+</section>
+
+<section id="cotiza">
+<h2>Solicita tu cotización<small>Atención de 10 a. m. a 6 p. m. · WhatsApp +504 9938-3883</small></h2>
+<form id="f" novalidate>
+<label>Tu nombre<input id="n" autocomplete="name" required></label>
+<label>Tipo de servicio<select id="s"></select></label>
+<label>Cantidad de invitados (mínimo 20)<input id="p" type="number" min="20" inputmode="numeric" required></label>
+<label>Fecha del evento<input id="d" type="date"></label>
+<label>Tu idea o temática (opcional)<textarea id="t" rows="3"></textarea></label>
+<p class="err" id="e" role="alert"></p>
+<button class="cta" type="submit">Enviar por WhatsApp</button>
+</form>
+<p class="lead" style="margin-top:18px">Síguenos en Instagram y TikTok <b>@pcontsnacks.hn</b> y en Facebook <b>Pídelo Con Todo Snacks</b>.</p>
+</section>
+</main>
+<a class="wa" href="https://wa.me/50499383883" target="_blank" rel="noopener">WhatsApp</a>
+
+<footer>
+<p><b>Pídelo Con Todo Snacks. Todos los derechos reservados.</b></p>
+<p>Desarrollada por Amilcar Roney, CEO de Pídelo Con Todo Snacks Honduras · Valle del Zamorano, Honduras, C.A.</p>
+</footer>
+
+<script>
+var B=[
+["Barra Fría","Pcont’Minutas",["3 sabores de jarabe a elección","Leche condensada","8 opciones de toppings en la barra"],["2 toppings a elegir","Gomitas: 2 unidades por minuta","Otro topping: aprox. 1 oz por minuta"],"Minuta de 12 oz"],
+["Barra Mix MX","Pcont’Chiligomix",["3 tipos de base: churros, frituras y una tercera opción","3 tipos de gomitas","2 tipos de semillas","Chamoy, Tajín y limón"],["1 tipo de base","2 tipos de gomitas","1 tipo de semilla","Salsas y limón incluidos en la preparación"],"Porción de 9 oz en vaso de 12 oz"],
+["Barra Dulce","Pcont’Dulce Capricho",["2 tipos de base: galletas o churro dulce","3 tipos de gomitas","Cacahuate","Leche condensada, jarabe de fresa y 1 sirope a elección"],["1 tipo de base","2 tipos de gomitas","Cacahuate","Leche condensada y jarabe de fresa incluidos"],"Porción de 9 oz en vaso de 12 oz"],
+["Barra Cake","Pcont’Waffles",["2 waffles por invitado","5 toppings: gomitas, malvaviscos, cacahuate, granola y 1 a elección","Leche condensada y jarabe de fresa"],["2 waffles","2 tipos de toppings"],"2 waffles · sticker en el plato"],
+["Barra Licuados","Pcont’Smoothies",["Licuado de banana, de Oreo y de fresa","Granita de chicle","1 jarabe a elección","Tú eliges 2 opciones de la barra para tu evento"],["1 bebida","1 sabor de jarabe"],"Vaso de 9 oz"],
+["Barra Fresas con crema","Pcont’Fresas",["Vaso de fresas con crema de 9 oz","5 toppings: 2 de gomitas y 3 adicionales","Leche condensada, sirope de fresa y 1 sirope a elección"],["2 toppings de los disponibles","Jarabes y siropes incluidos"],"Vaso de 9 oz"],
+["Barra Fruta de temporada","Pcont’Frutas",["Fruta de temporada a elección","5 toppings a elección","Leche condensada y sirope de fresa"],["La fruta disponible en la barra","2 toppings de los disponibles","Jarabes y siropes incluidos"],"Según la presentación de la fruta (vaso o bandeja)"],
+["Barra de Mocktails","Cóctel de bienvenida",["4 mocktails a elección","Montaje y servicio de la barra","Vasos de 9 oz y 3 toppings a elección"],["1 mocktail entre las 4 opciones del evento"],"Vaso de 9 oz"]
+];
+var L=document.getElementById("lista"),S=document.getElementById("s"),h="",o="";
+function li(a){return"<ul>"+a.map(function(x){return"<li>"+x+"</li>"}).join("")+"</ul>"}
+B.forEach(function(b){
+h+='<details><summary><div><strong>'+b[0]+'</strong><span>'+b[1]+'</span></div></summary><div class="in"><div><h3>Incluye</h3>'+li(b[2])+'</div><div><h3>Por cada invitado</h3>'+li(b[3])+'</div><div class="meta"><i>'+b[4]+'</i><i>≈ 2 horas</i></div></div></details>';
+o+='<option>'+b[0]+' · '+b[1]+'</option>';
+});
+["Otros snacks","Snack Experience (combo)","Algo personalizado"].forEach(function(x){o+="<option>"+x+"</option>"});
+L.innerHTML=h;S.innerHTML=o;
+var CB=document.getElementById("cb"),CG=document.getElementById("cg"),RS=document.getElementById("res");
+CB.innerHTML=B.map(function(b,i){return'<option value="'+i+'">'+b[0]+'</option>'}).join("");
+function oz(x){return Math.round(x)+" oz (≈ "+(x*0.0296).toFixed(1)+" litros)"}
+function calc(){
+var i=+CB.value,g=Math.max(1,Math.floor(+CG.value||0)),r=[];
+if(i==0)r=["<b>"+g+"</b> minutas de 12 oz","<b>"+2*g+"</b> gomitas por topping, como mínimo","Producto aproximado: "+oz(12*g)];
+else if(i==1||i==2)r=["<b>"+g+"</b> vasos de 12 oz","<b>"+2*g+"</b> porciones de gomitas (2 por invitado)","Producto aproximado: "+oz(9*g)];
+else if(i==3)r=["<b>"+2*g+"</b> waffles (2 por invitado)","<b>"+g+"</b> platos"];
+else if(i==4)r=["<b>"+g+"</b> bebidas de 9 oz","≈ <b>"+Math.ceil(g/2)+"</b> por cada una de tus 2 opciones","Total aproximado: "+oz(9*g)];
+else if(i==7)r=["<b>"+g+"</b> mocktails de 9 oz","≈ <b>"+Math.ceil(g/4)+"</b> por cada una de tus 4 opciones","Total aproximado: "+oz(9*g)];
+else r=["<b>"+g+"</b> porciones","<b>"+2*g+"</b> elecciones de topping (2 por invitado)"];
+if(g<20)r.push("Recuerda: el mínimo del servicio es de 20 personas.");
+RS.innerHTML=r.map(function(x){return"<li>"+x+"</li>"}).join("");
+}
+CB.onchange=CG.oninput=calc;calc();
+var r=document.documentElement,t=document.getElementById("tema");
+function paint(){var d=r.getAttribute("data-theme")==="dark";t.textContent=d?"☀️ Día":"🌙 Noche"}
+var m=window.matchMedia("(prefers-color-scheme: dark)").matches;
+r.setAttribute("data-theme",m?"dark":"light");paint();
+t.onclick=function(){r.setAttribute("data-theme",r.getAttribute("data-theme")==="dark"?"light":"dark");paint()};
+document.getElementById("f").onsubmit=function(ev){
+ev.preventDefault();
+var n=document.getElementById("n").value.trim(),p=+document.getElementById("p").value,e=document.getElementById("e");
+if(!n){e.textContent="Escribe tu nombre para continuar.";return}
+if(!(p>=20)){e.textContent="El mínimo es de 20 personas. Escribe cuántos invitados esperas.";return}
+e.textContent="";
+var d=document.getElementById("d").value,i=document.getElementById("t").value.trim();
+var msg="Hola, soy "+n+" y quiero cotizar: "+S.value+" para "+p+" personas."+(d?" Fecha: "+d+".":"")+(i?" Idea: "+i:"");
+window.open("https://wa.me/50499383883?text="+encodeURIComponent(msg),"_blank","noopener");
+};
+</script>
+</body>
+</html>
